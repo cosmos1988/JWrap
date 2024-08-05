@@ -2,6 +2,8 @@
 
 This is a library created to make it easy to use by wrapping Element objects.
 
+example:
+
 let objById = JElement.get('id');
 
 let objByIdAndChildName = JElement.select('id', 'childName');
