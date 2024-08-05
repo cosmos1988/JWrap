@@ -2,7 +2,15 @@
 
 This is a library created to make it easy to use by wrapping Element objects.
 
-example:
+■ files
+
+jwrap.apidoc.txt: API Document
+
+jwrap.js: Library File
+
+jwrap.min.js: Minify Library File
+
+■ example
 
 let objById = JElement.get('id');
 
