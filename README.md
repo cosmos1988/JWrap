@@ -11,15 +11,23 @@ jwrap.js: Library File
 jwrap.min.js: Minify Library File
 
 ■ example
+<!DOCTYPE html>
+<html>
+<script src="./jwrap.js"></script>
+<body>
+    <from id="parent-id">
+        <input type="text" id="test-id" name="child-name" value="test"/>
+    </from>
+</body>
+<script>
+let objById = JInput.get('test-id');
 
-let objById = JElement.get('id');
+let objByIdAndChildName = JElement.select('parent-id', 'child-name');
 
-let objByIdAndChildName = JElement.select('id', 'childName');
+let objFromGetMethod = JElement.from('test-id');
 
-let objFromGetMethod = JElement.from('id');
+let objFromSelectMethod = JElement.from('parent-id', 'child-name');
 
-let objFromSelectMethod = JElement.from('id', 'childName');
-
-let createElemet = JElement.create('input', 'id', 'name', 'type');
-
-objById.isEmpty().alert('empty!').else((element) -> element.alert('not empty!'));
+objById.isEmpty().alert('empty!').else((element) => JAction.alert('not empty!'));
+</script>
+</html>
