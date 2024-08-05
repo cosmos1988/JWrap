@@ -39,7 +39,7 @@ Class: JElement
   Method: static from(arg1, arg2, arg3) -> this.get(arg1)
   Method: static get(id) -> new this(element)
   Method: static select(parentId, name, index = 0) -> new this(element)
-  Method: static create(tagName, id, name, type) -> new this(element)
+  Method: static create(id, name, tagName, type) -> new this(element)
   Method: constructor(element) -> void
   Method: getElement() -> this.element
   Method: click() -> this
