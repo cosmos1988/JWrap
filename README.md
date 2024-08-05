@@ -1,8 +1,3 @@
-JWrap
-
-Javascript Element Wrapper Class Library
-
-
 Classes and Methods:
 Class: JWrap
   Method: static info() -> text
