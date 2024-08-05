@@ -294,13 +294,13 @@ class JElement extends JObject {
       throw new JElementIdError(parentId);
     }
     let elements = Array.from(
-    parentElement.querySelectorAll(`[name="${name}"]`),
+      parentElement.querySelectorAll(`[name="${name}"]`),
     );
     if (!elements) {
       throw new JElementsNameError(name);
     }
     if (index > elements.length - 1) {
-      throw new JElementsIndexOutOfBoundsError(name, index);
+      throw new JElementsIndexOutOfBoundsError(parentId, name, index);
     }
     let element = elements[index];
     if (this.tagName) {
@@ -316,7 +316,7 @@ class JElement extends JObject {
     return new this(element);
   }
   
-  static create(tagName, id, name, type) {
+  static create(id, name, tagName, type) {
     let element;
     if (tagName) {
       element = document.createElement(tagName);
