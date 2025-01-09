@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+hello world!
+<input type="text" id="test"/>
+<button id="btn">hello</button>
+<p>
+    <form id="test-form">
+        <p>
+            Inputs
+            <input type="text" name="tinputs" id="tinputs-1"/>
+            <input type="text" name="tinputs" id="tinputs-2"/>
+            <input type="text" name="tinputs" id="tinputs-3"/>
+            <input type="text" name="tinputs" id="tinputs-4"/>
+            <input type="text" name="tinputs" id="tinputs-5"/>
+        </p>
+
+        <p>
+            Radios
+            <input type="radio" name="tradio" id="tradio-0"/>
+            <input type="radio" name="tradio" id="tradio-1"/>
+            <input type="radio" name="tradio" id="tradio-2"/>
+        </p>
+        <p>
+            Checkbox
+            <input type="checkbox" name="tcheck" id="tcheck-0"/>
+            <input type="checkbox" name="tcheck" id="tcheck-1"/>
+            <input type="checkbox" name="tcheck" id="tcheck-2"/>
+        </p>
+        
+        <p>
+            Select
+            <select id="tselect">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </p>
+
+        <p>
+            Date
+            <input type="date" id="tdate">
+        </p>
+
+        <p>
+            Time
+            <input type="time" id="ttime">
+        </p>
+
+        <p>
+            Search
+            <input type="search" id="tsearch" list="tlist">
+            <datalist id="tlist">
+                <option value="1">a1</option>
+                <option value="2">a2</option>
+                <option value="c">c3</option>
+            </datalist>
+        </p>
+
+        <p>
+            Time
+            <input type="color" id="tcolor">
+        </p>
+
+        <p>
+            <input type="submit" value="Submit">
+            <input type="button" onclick="timeStr()" value="Button">
+            <progress value="70" max="100"></progress>
+        </p>
+    </form>
+</p>
+</body>
+<script src="./jwrap.js"></script>
+<script>
+    JWrap.ready(()=>{
+        
+        // alert 커스텀
+        JWrap.alertFn = (msg) => {
+            alert("JWrap: " + msg);
+        }
+        JWrap.alert("Hello World!");
+
+        // 버튼 이벤트 (JWrap)
+        JButton.from("btn").addClickEvent( () => {
+            JInput.from("test")
+                .if().isEmpty()
+                    .then().alert("Empty")
+                .else().if().isNumber().or().isOnlyEnglish()
+                    .then().alert("Number or English")
+                .else().alert("Not Empty");
+        });
+
+        /*
+        // 버튼 이벤트 (바닐라js)
+        document.getElementById("btn").addEventListener('click', () => {
+            let element = document.getElementById("test");
+            if (element.value == null || element.value.trim() == '') {
+                alert("Empty");
+            } else if (!isNaN(element.value) || /^[a-zA-Z]+$/.test(element.value)) {
+                alert("Number or English");
+            } else {
+                alert("Not Empty");
+            }
+        });
+        */
+    }) 
+</script>
+</html>
