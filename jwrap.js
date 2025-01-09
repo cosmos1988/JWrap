@@ -2,7 +2,7 @@
  * @fileoverview JWrap is a JavaScript library that provides a variety of functions and classes to simplify web development.
  * @author Joo Yong-jin
  * @version 2025.1.9
- * @license MIT
+ * @license GNU General Public License v3.0
  */
 
 /**
