@@ -1,13 +1,14 @@
-# JWrap
+# Welcome to JWrap!
 
-This is a library created to make it easy to use by wrapping Element objects.
+JWrap is a JavaScript library that simplifies web development with a variety of functions and classes.
 
-■ files
-
-example.html: Example File
-
-jwrap.apidoc.txt: API Document
-
-jwrap.js: Library File
-
-jwrap.min.js: Minify Library File
+## example
+```javascript
+JButton.from("btn").addClickEvent( () => {
+    JInput.from("test")
+        .if().isEmpty()
+            .then().alert("Empty")
+        .else().if().isNumber().or().isOnlyEnglish()
+            .then().alert("Number or English")
+        .else().alert("Not Empty");
+```
